@@ -1,4 +1,6 @@
-FROM openjdk:21-jdk-slim
-COPY . /app
+FROM eclipse-temurin:21
+
 WORKDIR /app
-CMD ["java", "-jar", "target/gold-movie-API.jar"]
+COPY ./target/movies-0.0.1-SNAPSHOT.jar /app
+EXPOSE 8080
+CMD ["java", "-jar", "movies-0.0.1-SNAPSHOT.jar"]
